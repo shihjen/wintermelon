@@ -1,6 +1,6 @@
 const countdown = () => {
   // Specify the date and time we are counting down to.
-  const countDate = new Date("Dec 31, 2022 10:40:00").getTime();
+  const countDate = new Date("Dec 31, 2022 10:55:00").getTime();
   const now = new Date().getTime();
   const remainingTime = countDate - now;
 
@@ -22,3 +22,23 @@ const countdown = () => {
 
 // should use 500 as setInterval won't always run on time.
 setInterval(countdown, 500);
+
+
+    // Total seconds to wait
+    var seconds = 540;
+    
+    function countdown() {
+        seconds = seconds - 1;
+        if (seconds < 0) {
+            // Chnage your redirection link here
+            window.location = "https://www.nus.edu.sg/inside-nus";
+        } else {
+            // Update remaining seconds
+            document.getElementById("countdown").innerHTML = seconds;
+            // Count down using javascript
+            window.setTimeout("countdown()", 1000);
+        }
+    }
+    
+    // Run countdown function
+    countdown();
